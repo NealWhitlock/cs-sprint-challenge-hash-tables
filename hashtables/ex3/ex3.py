@@ -6,7 +6,7 @@ def intersection(arrays):
     vals = {}
 
     # Iterate through the arrays in arrays
-    for i, array in enumerate(arrays):
+    for array in arrays:
         # Go through each number in the array
         for num in array:
             # If that number is not in the dictionary
