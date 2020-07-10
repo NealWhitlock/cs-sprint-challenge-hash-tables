@@ -11,11 +11,11 @@ def intersection(arrays):
         for num in array:
             # If that number is not in the dictionary
             if num not in vals:
-                # Put it in with the index of the array in a list
-                vals[num] = [i]
+                # Put num in vals with a count of 1
+                vals[num] = 1
             else:
-                # Otherwise, append the index to the list
-                vals[num].append(i)
+                # Otherwise, increment the count
+                vals[num] += 1
     
     # List of results to return
     result = []
@@ -26,7 +26,7 @@ def intersection(arrays):
     # Look at the key, value pairs in vals dictionary
     for k, v in vals.items():
         # If the value list has as many elements as arrays passed in...
-        if len(v) == arrays_len:
+        if v == arrays_len:
             # Put the key in the result list
             result.append(k)
               

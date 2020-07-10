@@ -11,10 +11,6 @@ def finder(files, queries):
 
     # Iterate through the files
     for file in files:
-        # # Split the file path on '/' and store the whole path
-        # # as a key in file_paths and the last split as the value
-        # file_paths[file] = file.split('/')[-1]
-
         # Split the file path on '/'
         f_split = file.split('/')
         # Check if the last split is a key in file_paths
