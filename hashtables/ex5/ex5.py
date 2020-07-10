@@ -6,7 +6,32 @@ def finder(files, queries):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    # Dictionary to store file paths and last file/folder
+    file_paths = {}
+
+    # Iterate through the files
+    for file in files:
+        # Split the file path on '/'
+        f_split = file.split('/')
+        # Check if the last split is a key in file_paths
+        if f_split[-1] in file_paths:
+            # If so, add the whole file path to the value list
+            file_paths[f_split[-1]].append(file)
+        # Otherwise, create a key with a list for value of the path
+        else:
+            file_paths[f_split[-1]] = [file]
+
+
+    # Result list to store matches
+    result = []
+
+    # Iterate through the queries
+    for query in queries:
+        # Check if query is key in file_paths
+        if query in file_paths:
+            # Add the value list to result
+            result += file_paths[query]
+
 
     return result
 
